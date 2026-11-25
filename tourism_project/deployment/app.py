@@ -45,7 +45,7 @@ with st.form("prediction_form"):
         age = st.number_input("Age", min_value=18, max_value=90, value=36, step=1)
         gender = st.selectbox("Gender", ["Male", "Female"])
         marital_status = st.selectbox(
-            "Marital Status", ["Married", "Single", "Divorced", "Unmarried"]
+            "Marital Status", ["Married", "Single", "Divorced"]
         )
         city_tier = st.selectbox("City Tier", [1, 2, 3], index=0)
 
