@@ -17,7 +17,10 @@ def prepare_data():
 
     # 3. Clean data anomalies and handle any missing values
     if "Gender" in df.columns:
-        df["Gender"] = df["Gender"].replace({"Fe Male": "Female"})
+        df["Gender"] = df["Gender"].replace({"Fe Male": "Female"})#Since Fe Male refers to Female but misspelled
+    df = df.dropna().reset_index(drop=True)
+    if "MaritalStatus" in df.columns:
+        df["MaritalStatus"] = df["MaritalStatus"].replace({"Unmarried": "Single"})#Since Unmarried and Single means the same
     df = df.dropna().reset_index(drop=True)
 
     # 4. Separate features (X) and target (y)
