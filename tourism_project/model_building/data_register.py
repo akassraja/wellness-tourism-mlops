@@ -36,7 +36,7 @@ EXPECTED_COLUMNS = [
 
 def register_dataset():
     """
-    Validates the existence, completeness, and schema integrity of the 
+    Validates the existence, completeness, and schema integrity of the
     tourism.csv dataset, and outputs details to verify compliance.
     """
     # 1. Check if dataset file exists in the designated directory
@@ -67,7 +67,7 @@ def register_dataset():
     print(f"Shape           : {df.shape[0]} rows, {df.shape[1]} columns")
     if extra_cols:
         print(f"Extra Columns   : {extra_cols}")
-    
+
     # 7. Provide summary of data types and empty cells for initial inspection
     print("\n--- Column Data Types & Missing Values ---")
     summary = pd.DataFrame({
@@ -75,7 +75,7 @@ def register_dataset():
         "missing_count": df.isnull().sum()
     })
     print(summary)
-    
+
     # 8. Output class distribution metrics for the target label
     print("\n--- Target Variable Distribution (ProdTaken) ---")
     print(df["ProdTaken"].value_counts(normalize=True).mul(100).round(2).astype(str) + "%")
